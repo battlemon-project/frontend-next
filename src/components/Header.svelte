@@ -1,5 +1,6 @@
 <script lang="ts">
   import Logo from '$src/components/Logo.svelte'
+  import Countdown from '$src/components/Countdown.svelte'
   import { page } from '$app/stores';
   import { near, signIn } from '$src/utils/near'
 
@@ -37,23 +38,8 @@
           <a class="nav-link" class:active={$page.url.pathname === '/history'} href="/history">History</a>
         </li> -->
       </ul>
-      <ul class="navbar-nav mb-2 mb-lg-0 fs-5">
-        
-        <li class="nav-item dropdown">
-          {#if $near.accountId}
-            <button class="btn btn-lg btn-outline-light dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-              {$near.accountId}
-            </button>
-            <ul class="dropdown-menu w-100" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href={"#"} on:click|preventDefault={handleSignOut}>Sign Out</a></li>
-            </ul>
-          {:else}
-            <button class="btn btn-lg btn-outline-light" on:click={() => signIn()}>
-              Sign In
-            </button>
-          {/if}
-        </li>
-      </ul>
+      
+      <Countdown />
     </div>
   </div>
 </nav>

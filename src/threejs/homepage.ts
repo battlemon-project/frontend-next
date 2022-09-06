@@ -262,9 +262,9 @@ export class Model {
       }
       
       this.hoverLayers(hovered);
-      if (hovered == 'download_client') document.onclick = () => location.href = clientLink()
-      if (hovered == 'lemterprise') document.onclick = () => goto('/lemterprise')
-      if (hovered == 'arena') document.onclick = () => goto('/hub')
+      // if (hovered == 'download_client') document.onclick = () => location.href = clientLink()
+      // if (hovered == 'lemterprise') document.onclick = () => goto('/lemterprise')
+      // if (hovered == 'arena') document.onclick = () => goto('/hub')
     } 
     
     
